@@ -118,17 +118,20 @@ li #trailer-icon {
 /*************** NAV **************/
 /**********************************/
 /** navigation slotmachine effect **/
+
 nav {
+    width: 100%;
     padding: 1rem;
     height: initial;
+    z-index: 10;
 }
 
-ul.navigation__container {
+.navigation__container {
     position: fixed;
     width: 100%;
     top: 0;
     padding: 1rem;
-    z-index: 100;
+
     display: grid;
     grid-template-columns: 2fr 3fr;
     gap: 1rem;
@@ -896,41 +899,41 @@ span.slot-machine__button a span::before {
     flex-direction: column;
     gap: 2rem;
     align-items: center;
+
 }
 
-.about-me__section section {
+.hero-mobile__about-me {
+    padding-top: 2rem;
     position: relative;
-
     display: flex;
     justify-content: center;
-
     height: fit-content;
     width: 100%;
-    padding-bottom: 2rem;
 }
 
 .hero-mobile__about-me{
-    display: none;
+    position: absolute;
+    transform: translateX(100%);
 }
 
 .hero-mobile__about-me figure{   
-    height: 20rem;
 }
 
 .hero-mobile__about-me img {
-    width: auto;
-    height: 100%;
+    width: 100%;
+    height: auto;
     object-fit: cover;
     object-position: 20% 10%;
     border-radius: 2rem;
 }
 
-.about-me__section section h1 {
+.hero-mobile__about-me h1 {
     position: absolute;
-    bottom: 0;
-    right: 20%;
-    font-size: 8rem;
-    color: var(--primary-white);
+    bottom: 0%;
+    left: 0;
+    margin: 0 auto;
+    font-size: 5rem;
+    color: var(--primary-black);
 }
 
 
@@ -1283,6 +1286,119 @@ footer div ul li {
         gap: 2rem;
         padding: 0 2rem;
     }
+
+    /*****************/
+    /*** Navigatie ***/
+    /*****************/
+    .navigation__container{
+        left: 0;
+    }
+
+    .navigation-items{
+        position: fixed;
+        top: 0;
+        left: 0;
+        flex-direction: column !important;
+        width: 100%;
+        height: 100%;
+        justify-content: center !important;
+        background-color: var(--primary-grey);
+        z-index: 100;
+    }
+
+    .hamburger-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 18px;
+        width: 18px;
+        cursor: pointer;
+        z-index: 99999;
+    }
+      
+    .line {
+        height: 2px;
+        width: 18px;
+        background-color: var(--primary-white);
+        margin: 2px 0;
+        transition: transform 0.2s ease-in-out;
+    }
+      
+    .line:first-child {
+        transform-origin: top left;
+    }
+    
+    .line:nth-last-of-type(2){
+        opacity: 1;
+        transition: ease-in .3s;
+    }
+      
+    .line:last-child {
+        transform-origin: bottom left;
+    }
+    
+    .hamburger-menu.open .line:first-child {
+        transform: rotate(45deg);
+    }
+    
+    .hamburger-menu.open .line:nth-of-type(2){
+        opacity: 0;
+        width: 0px;
+        transition: ease-out .2s;
+    }
+      
+    .hamburger-menu.open .line:last-child {
+        transform: rotate(-45deg);
+    }
+      
+    .toonMenu{
+        background-color: var(--primary-grey);
+        position: fixed;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        z-index: 20;
+        transform: translateX(100%);
+        transition: .3s ease;
+        max-height: 100%;
+        width: 100%;
+        
+        padding: 1.125rem;
+
+    }
+    
+    /* .toonMenu li{
+        font-family: var(--ff-accent);
+        color: var(--clr-secondary);
+    } */
+    
+    /* .toonMenu a{
+        font-family: var(--ff-accent);
+        text-decoration: none;
+    }
+    
+    .toonMenu a:hover, .toonMenu a:focus{
+        color: var(--clr-accent);
+        text-decoration: dashed;
+    } */
+    
+    .toonMenu.show{
+        transform: translateX(0%);
+    }
+    
+    .toonMenu ul{
+        padding: 3em 3em 1.5em 3em;
+    }
+    
+    .toonMenu ul li{
+        list-style-type: none;
+        letter-spacing: .1em;
+        line-height: 2em;
+        /* font-size: var(--fs-600); */
+        font-weight: bold;
+    }
+    
+
     /****************/
     /*** Over mij ***/
     /****************/
@@ -1290,6 +1406,29 @@ footer div ul li {
         display: none;
     }
     .hero-mobile__about-me{
-        display: block;
+        position: relative;
+        transform: translateX(0%);
+    }
+
+    .hero-mobile__about-me-foto{ 
+        position: relative;
+    }
+
+    .about-me__section article{
+        flex-direction: column;
+    }
+
+    /***************/
+    /*** Contact ***/
+    /***************/
+    .connect__contact-container section{
+        margin:0 1.5rem;
+    }
+
+    /**************/
+    /*** Footer ***/
+    /**************/
+    footer div{
+        flex-direction: column;
     }
 }

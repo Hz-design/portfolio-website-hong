@@ -1,3 +1,15 @@
+// Navigation menu
+const menu = document.querySelector('.hamburger-menu');
+const deNav = document.querySelector('.toonMenu');
+
+menu.addEventListener('click', toggleMenu);
+
+function toggleMenu(event){
+    deNav.classList.toggle('show');
+    menu.classList.toggle('open');
+    // toggleOff.classList.toggle('transparant');
+}
+
 /* mouse hover elements */
 const featureItemLeft = document.querySelector(".product-left");
 const featureItemMiddle = document.querySelector(".product-middle");
