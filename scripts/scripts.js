@@ -273,9 +273,8 @@ const floatingCard = document.getElementById('floating-card');
         let cardX = 0, cardY = 0;
 
         const updatePosition = () => {
-
-            cardX += (mouseX - cardX) * 0.5;
-            cardY += (mouseY - cardY) * 0.5;
+            cardX += (mouseX - cardX) * 0.3;
+            cardY += (mouseY - cardY) * 0.3;
             floatingCard.style.transform = `translate(${cardX - floatingCard.offsetWidth / 2}px, ${cardY - floatingCard.offsetHeight / 2}px)`;
             requestAnimationFrame(updatePosition);
 

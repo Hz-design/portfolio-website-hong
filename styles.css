@@ -895,6 +895,7 @@ span.slot-machine__button a span::before {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    align-items: center;
 }
 
 .about-me__section section {
@@ -907,19 +908,22 @@ span.slot-machine__button a span::before {
     width: 100%;
     padding-bottom: 2rem;
 }
-/* OLD 
-.about-me__section section figure{
-    
+
+.hero-mobile__about-me{
+    display: none;
+}
+
+.hero-mobile__about-me figure{   
     height: 20rem;
 }
 
-.about-me__section section img {
+.hero-mobile__about-me img {
     width: auto;
     height: 100%;
     object-fit: cover;
     object-position: 20% 10%;
     border-radius: 2rem;
-} */
+}
 
 .about-me__section section h1 {
     position: absolute;
@@ -935,18 +939,21 @@ span.slot-machine__button a span::before {
     display: flex;
     flex-direction: row;
     width: 100%;
+    max-width: 120ch;
     justify-content: space-between;
-    align-items: center;
+    align-items:baseline;
     gap: 1rem;
 }
 
 .about-me__section article p {
-    max-width: 60%;
+    max-width: 65ch;
+    font-family: var(--fm-sans-serif);
+    font-size: var(--p-fs);
 }
 
 /* Scroll box about me */
 .scroll_container{
-    height: 230vh;
+    height: 250vh;
     width: 100%;
     padding: 5rem 0;
 }
@@ -1063,7 +1070,6 @@ overflow-y: auto;
 }
 
 .sticky_wrap{
-    overflow: hidden;
     position: sticky;
     top: 10vh;
     height: 80vh;
@@ -1080,7 +1086,7 @@ overflow-y: auto;
     position: absolute;
     top: 0;
     left: 0;
-    
+
     background: white;
     color: black;
     padding: 15px;
@@ -1260,7 +1266,7 @@ footer div ul li {
 /************************************************/
 /************************************************/
 
-@media (max-width: 62rem) {
+@media (max-width: 27rem) {
     h1.landing__h1 {
         padding: 4rem 2rem 2rem;
     }
@@ -1276,5 +1282,14 @@ footer div ul li {
         height: fit-content;
         gap: 2rem;
         padding: 0 2rem;
+    }
+    /****************/
+    /*** Over mij ***/
+    /****************/
+    .scroll_container{
+        display: none;
+    }
+    .hero-mobile__about-me{
+        display: block;
     }
 }
