@@ -1,0 +1,8 @@
+{   "scripts": {
+  "start": "live-server",
+  "test": "echo \"Error: no test specified\" && exit 1"
+},
+  "dependencies": {
+    "locomotive-scroll": "^5.0.0-beta.21"
+  }
+}

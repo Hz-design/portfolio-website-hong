@@ -10,10 +10,17 @@
     --primary-light-grey: #7e7e7e;
     --primary-white: #ffffff;
     --primary-off-white: #e9e9e9;
+    --clr-background-card-gradient:linear-gradient(
+        hsl(0 0% 100% / 0),
+        hsl(20 0% 100% / 0.3) 6%,
+        hsl(0 0% 100% / 1)
+    );
 
     /* Font sizes */
     --h2-fs: 2rem;
     --h3-fs: 1.5rem;
+
+    --p-fs:1rem;
 }
 
 *,
@@ -24,6 +31,7 @@
     padding: 0;
 }
 
+  
 body {
     background-color: var(--primary-off-white);
 }
@@ -189,7 +197,6 @@ ul.navigation-items {
     color: var(--primary-white);
     background: var(--primary-black);
     margin-left: -0.2rem;
-    padding: 0 0.3rem;
 }
 
 .navigation-items li:first-of-type a span::before {
@@ -892,24 +899,27 @@ span.slot-machine__button a span::before {
 
 .about-me__section section {
     position: relative;
+
+    display: flex;
+    justify-content: center;
+
     height: fit-content;
     width: 100%;
     padding-bottom: 2rem;
 }
-
-.about-me__section section div {
-    width: 100%;
-    height: 50vh;
-    object-position: 49%;
+/* OLD 
+.about-me__section section figure{
+    
+    height: 20rem;
 }
 
 .about-me__section section img {
-    width: 100%;
+    width: auto;
     height: 100%;
     object-fit: cover;
     object-position: 20% 10%;
     border-radius: 2rem;
-}
+} */
 
 .about-me__section section h1 {
     position: absolute;
@@ -919,11 +929,6 @@ span.slot-machine__button a span::before {
     color: var(--primary-white);
 }
 
-.about-me__section section p {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
 
 /* About me page Information */
 .about-me__section article {
@@ -938,6 +943,170 @@ span.slot-machine__button a span::before {
 .about-me__section article p {
     max-width: 60%;
 }
+
+/* Scroll box about me */
+.scroll_container{
+    height: 230vh;
+    width: 100%;
+    padding: 5rem 0;
+}
+
+.horizontal_scroll{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+    /* https://css-shape.com/film-strip/ */
+    --s: 12px; /* control the size */
+    --c: #222;
+    
+    width: calc(20*var(--s));
+    aspect-ratio: 1.25;
+    background: 
+        conic-gradient(at 50% var(--s),var(--c) 75%,#0000 0) 
+        0 0/calc(2*var(--s)) calc(100% - var(--s)) padding-box;
+    border: var(--s) solid var(--c);
+    padding: calc(var(--s)*2.5) calc(var(--s)*1.5);
+    /* box-sizing: content-box; */
+}
+
+.scroll_contents{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+    position: relative;
+    height: 100%;
+    width: 100%;
+    min-width: fit-content;
+}
+
+.scroll_contents ul li{
+    list-style-type:none;
+}
+
+.scroll_contents .school-logo{
+    max-height: 3rem;
+    width: auto;
+    height: 100%;
+    background-color: #fff;
+    border: 2px solid #fff;
+    margin: .5rem 0;
+}
+
+.scroll_contents figure{
+    width: auto;
+    height: 100%;
+}
+
+.scroll_content-photo.filter{
+    filter: sepia(1) brightness(0.9) grayscale(.2);
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s; /* Delayed visibility change */
+}
+
+.scroll_content-photo{
+    pointer-events: none;
+    filter: sepia(0) brightness(0.9) grayscale(.2);
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s; /* Delayed visibility change */ 
+}
+
+.scroll_contents figure img{
+    width: auto;
+    height: 100%;
+}
+
+.scroll_contents-text{
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s; /* Delayed visibility change */
+    /* pointer-events: none; */
+    position: absolute;
+    bottom: 0;
+    padding: 1.5rem 1rem;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+
+.scroll_contents-text.visible{
+    visibility: visible;
+    opacity: 1; /* Fully visible */
+    transition: opacity 0.3s ease, visibility 0s linear 0s; /* Remove visibility delay when showing */
+}
+
+.scroll_contents-text h2{
+    padding: 0;
+    font-size: var(--h2-fs);
+    font-family: var(--fm-serif);
+}
+
+.scroll_contents-text h3{
+    font-size: var(--h3-fs);
+    font-family: var(--fm-sans-serif);
+}
+
+.scroll_contents-text ul li{
+    font-size: var(--p-fs);
+    font-family: var(--fm-sans-serif);
+    padding: .2rem 0;
+}
+
+.scroll_contents-text p{
+    max-height: 10rem;
+    font-size: var(--p-fs);
+    font-family: var(--fm-sans-serif);
+
+overflow-y: auto;
+}
+
+.sticky_wrap{
+    overflow: hidden;
+    position: sticky;
+    top: 10vh;
+    height: 80vh;
+}
+
+
+/** floating card about me**/
+.hover-area {
+    display: inline-block;
+    cursor: pointer;
+    height: 100%;
+}
+.floating-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    background: white;
+    color: black;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    pointer-events: none;
+    transition: opacity 0.2s ease-in-out, transform 0.15s ease-in-out;
+    width: 100%;
+    max-width: 65ch;
+}
+.floating-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    max-height: 3rem;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+.floating-card p {
+    margin: 5px 0;
+    font-size: var(--p-fs);
+    font-family: var(--fm-sans-serif);
+}
+
+
 /*****************************/
 /***** Footer Component ******/
 /*****************************/
@@ -948,7 +1117,7 @@ footer {
     min-height: 20vh;
     justify-content: flex-end;
     align-items: center;
-    padding: 2rem;
+    padding: 2rem 2rem 5rem;
 
     font-family: var(--fm-sans-serif);
     background: rgba(30, 0, 255, 0.3);
@@ -957,13 +1126,12 @@ footer {
 footer div {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: 100%;
 }
 
 footer div p {
-    display: flex;
-    flex-direction: column-reverse;
+align-self: flex-end;
 }
 
 footer div ul li {

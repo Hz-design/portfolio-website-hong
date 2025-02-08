@@ -20,7 +20,7 @@ const featuredMiddleText = document.querySelector(".card-title--middle");
 const featuredRightText = document.querySelector(".card-title--right");
 
 ////////////////////////////////////////
-// Hover over featured items
+// Hover over featured items frontpage
 function handleFeatureItemHover(
     featureItem,
     titleElement,
@@ -160,16 +160,27 @@ function updateAmsterdamTime() {
     // Update the content of the element with the current Amsterdam time
     document.querySelectorAll(".amsterdam-time").forEach((element) => {
         element.textContent =
-            amsterdamTime + " AMS, Amsterdam, The Netherlands";
+            amsterdamTime + " Veenendaal, Nederland";
 
         // Update the time every second (1000 milliseconds)
         setTimeout(updateAmsterdamTime, 1000);
     });
 }
-
 // Initial call to start updating the time
 updateAmsterdamTime();
 
+function updateYear(){
+    const currentYear = new Date().toLocaleString("en-US", {
+        timeZone: "Europe/Amsterdam",
+        year: "numeric",
+    })
+    document.querySelectorAll(".current-year").forEach((element) => {
+        element.textContent = currentYear;
+        setTimeout(updateYear, 1000);
+    })
+}
+
+updateYear();
 ////////////////////////////////////////////
 // Custom Cursor
 const trailer = document.getElementById("trailer");
@@ -221,3 +232,87 @@ window.onmousemove = (e) => {
         icon.className = getTrailerClass(interactable.dataset.type);
     }
 };
+
+
+///////////////////////////////////////////////
+// Film strip about me
+
+// Hybrid Scrolling
+const stickySections = [...document.querySelectorAll('.sticky_wrap')]
+
+if (window.matchMedia('(min-width: 45em)').matches){
+  window.addEventListener('scroll', (e) => {
+    for(let i = 0; i < stickySections.length; i++){
+      transform(stickySections[i])
+    }
+  })
+}
+
+function transform(section) {
+
+  const offsetTop = section.parentElement.offsetTop;
+
+  const scrollSection = section.querySelector('.horizontal_scroll')
+
+  let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
+
+  percentage = percentage < 0 ? 0 : percentage > 300 ? 300 : percentage;
+
+  scrollSection.style.transform = `translate3d(${-(percentage)}vw, 0, 0)`
+}
+
+
+////////////////////////////////////////////////
+// Hovering card about me
+const floatingCard = document.getElementById('floating-card');
+        const cardImage = document.getElementById('card-image');
+        const cardTitle = document.getElementById('card-title');
+        const cardDescription = document.getElementById('card-description');
+        const hoverAreas = document.querySelectorAll('.scroll_contents');
+        let mouseX = 0, mouseY = 0;
+        let cardX = 0, cardY = 0;
+
+        const updatePosition = () => {
+
+            cardX += (mouseX - cardX) * 0.5;
+            cardY += (mouseY - cardY) * 0.5;
+            floatingCard.style.transform = `translate(${cardX - floatingCard.offsetWidth / 2}px, ${cardY - floatingCard.offsetHeight / 2}px)`;
+            requestAnimationFrame(updatePosition);
+
+        };
+        updatePosition();
+
+        hoverAreas.forEach(area => {
+            area.addEventListener('mousemove', (e) => {
+                floatingCard.style.display = 'block';
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                const cardInformation = area.querySelector('.scroll_contents-text')
+                cardTitle.innerText = cardInformation.getAttribute('data-title');
+                cardDescription.innerText = cardInformation.getAttribute('data-description');
+                cardImage.src = cardInformation.getAttribute('data-image');
+                const scrollContentPhotos = area.querySelectorAll('.scroll_content-photo');
+                scrollContentPhotos.forEach((photo, index) =>{
+                    const infoElement = document.querySelector(`#info-${index}`);
+                    const photoFilter = document.querySelector(`.scroll_content-photo`);
+                    if (infoElement) {
+                      scrollContentPhotos[index].classList.remove('filter');
+                      infoElement.classList.add('visible'); // Make the info visible
+                    };
+                })
+
+            });
+
+            area.addEventListener('mouseleave', () => {
+                floatingCard.style.display = 'none';
+                const scrollContentPhotos = document.querySelectorAll('.scroll_content-photo');
+                scrollContentPhotos.forEach((photo, index) => {
+                    const infoElement = document.querySelector(`#info-${index}`);
+                    if (infoElement) {
+                      scrollContentPhotos[index].classList.add('filter');
+                      infoElement.classList.remove('visible'); // Hide the info
+                    }
+                })
+               
+            });
+        });

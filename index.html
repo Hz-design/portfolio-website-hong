@@ -23,12 +23,12 @@
                     <ul class="navigation-items">
                         <li>
                             <a href="./about.html"
-                                ><span data-hover="about">about</span></a
+                                ><span data-hover="over mij">over mij</span></a
                             >
                         </li>
                         <li>
                             <a href="./projects.html"
-                                ><span data-hover="projects">projects</span></a
+                                ><span data-hover="projecten">projecten</span></a
                             >
                         </li>
                         <li>
@@ -36,13 +36,13 @@
                                 ><span data-hover="contact">contact</span></a
                             >
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="#"
                                 ><span data-hover="playground"
                                     >playground</span
                                 ></a
                             >
-                        </li>
+                        </li> -->
                     </ul>
                 </ul>
             </nav>
@@ -53,10 +53,7 @@
                 <h1 class="landing__h1">Nice to meet you</h1>
                 <div class="landing__section-text-container">
                     <p class="p__body">
-                        I am Hong Zhou currently studying Communication and
-                        Multimedia Design at the Hogeschool van Amsterdam.
-                        Specialising in Visual, UI/UX and front-end development.
-                        I am also into photography and the latest tech trends.
+                        Afgestudeerd als communicatie multimedia designer en mediavormgever. Ik specialiseer mij op UX onderzoek en UI ontwerp. Ook doe ik graag fotografie in mijn vrije tijd.
                     </p>
                     <p class="p__body amsterdam-time"></p>
                 </div>
@@ -322,10 +319,19 @@
                         </ul>
                     </li>
                 </ul>
-                <p class="p__body amsterdam-time"></p>
-                <p>&copy; HONGZHOU 2023</p>
+                <div>
+                    <p class="p__body amsterdam-time"></p>
+                    <p>&copy; HONGZHOU <span class="current-year"></span></p>
+                </div>
+
             </div>
         </footer>
         <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>
+        <script>
+            (function () {
+                const locomotiveScroll = new LocomotiveScroll();
+            })();
+        </script>
+        
     </body>
 </html>
