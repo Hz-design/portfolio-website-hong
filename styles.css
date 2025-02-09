@@ -1273,6 +1273,7 @@ footer div ul li {
     .blur{
         filter: blur(.5rem);
         transition: .3s ease-in-out;
+        overflow: hidden;
     }
 
     h1.landing__h1 {
@@ -1393,6 +1394,22 @@ footer div ul li {
     ul.navigation-items{
         gap: 4rem;
     }
+
+    /*********************/
+    /***** Frontpage *****/
+    /*********************/
+    .featured-product__container {
+        grid-template-columns: repeat(1, 3fr);
+        gap:2rem;
+    }
+    .feature-product__card{
+        transform: none !important;
+    }
+
+    .feature-product__card-title{
+        opacity: 1 !important;
+    }
+
 
     /****************/
     /*** Over mij ***/
