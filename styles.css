@@ -634,7 +634,7 @@ span.slot-machine__button a span::before {
 /***** Project Landing Section ******/
 /************************************/
 .project-page {
-    padding: 2rem;
+    padding: 0 10vw 10vw 10vw;
 }
 .projects__landing-section {
     height: 100dvh;
@@ -707,6 +707,18 @@ span.slot-machine__button a span::before {
     filter: grayscale(0);
 }
 
+.project-featured a video {
+    position: relative !important;
+    width: 100%;
+    height: 70dvh;
+    filter: grayscale(100%);
+    transition: 0.2s ease-in-out;
+}
+
+.project-featured a:hover video {
+    filter: grayscale(0);
+}
+
 .project-featured a figure img {
     width: 100%;
     height: 100%;
@@ -767,9 +779,9 @@ span.slot-machine__button a span::before {
     justify-content: space-between;
 }
 
-.project-information-container a span p {
+/* .project-information-container a span p {
     text-transform: lowercase;
-}
+} */
 
 .project figure {
     width: 100%;
@@ -1481,6 +1493,14 @@ footer div ul li {
 
     .project{
         grid-template-columns: repeat(1, 1fr);
+    }
+
+    .project-page{
+        padding: 2rem;
+    }
+
+    .project-featured a video{
+        height: 40dvh;
     }
 
     /***************/
