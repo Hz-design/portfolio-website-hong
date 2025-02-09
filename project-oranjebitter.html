@@ -38,13 +38,6 @@
                                     ><span data-hover="contact">contact</span></a
                                 >
                             </li>
-                            <!-- <li>
-                                <a href="#"
-                                    ><span data-hover="playground"
-                                        >playground</span
-                                    ></a
-                                >
-                            </li> -->
                         </ul>
                     </div>
                     
@@ -101,53 +94,54 @@
             <div class="project-details__container first-section">
                 <figure>
                     <img
-                        src="https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg?auto=compress&cs=tinysrgb&w=400"
+                        src="./assets/img/oranjebitter.png"
                         alt=""
                     />
-                    <figcaption>A caption</figcaption>
+                    <figcaption>Homepagina van Oranjebitter.</figcaption>
                 </figure>
                 <section class="project-details__bite">
-                    <h2 class="project-details__bite-title">Challenge</h2>
+                    <h2 class="project-details__bite-title">Uitdaging</h2>
                     <p class="project-details__bite-paragraph">
-                        Coding a webdesign delivered by Glitterstudio into a
-                        responsive custom wordpress website.
+                        Het omzetten van een door Glitterstudio ontworpen webdesign naar een responsieve, op maat gemaakte WordPress-website voor Oranjebitter.
                     </p>
                 </section>
                 <section class="project-details__bite">
-                    <h2 class="project-details__bite-title">Approach</h2>
-                    <p class="project-details__bite-paragraph">
-                        Oranjebitter changes their website every year for the
-                        pre-sale of their festival tickets. Having a custom
-                        wordpress website so they can easily update information
-                        if needed.
-                    </p>
+                    <h2 class="project-details__bite-title">Aanpak</h2>
+                    <div class="project-details__bite-paragraph-container">
+                        <p class="project-details__bite-paragraph">
+                            Oranjebitter verandert elk jaar hun website voor de voorverkoop van hun festivaltickets. Ze hebben een op maat gemaakte WordPress-website, zodat ze gemakkelijk informatie kunnen bijwerken indien nodig.
+                        </p>
+                        <p class="project-details__bite-paragraph">
+                            De aanpak van dit project begint bij het maken van de planning voor de lancering van de website. Na het opstellen van een planning met ruimte voor uitloop, debugging en testing, wordt de website ontwikkeld. Na de oplevering van de website volgt er nog feedback, maar dit heeft minder prioriteit dan de lancering.
+                        </p>
+                    </div>
                 </section>
                 <figure class="project-details__figure-smaller">
                     <img
-                        src="https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg?auto=compress&cs=tinysrgb&w=400"
+                        src="./assets/img/projects/oranjebitter-1.png"
                         alt=""
                     />
-                    <figcaption>A caption</figcaption>
+                    <figcaption>Javascript carousel</figcaption>
                 </figure>
                 <figure class="project-details__figure-smaller">
                     <img
-                        src="https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg?auto=compress&cs=tinysrgb&w=400"
+                        src="./assets/img/projects/oranjebitter-2.png"
                         alt=""
                     />
-                    <figcaption>A caption</figcaption>
+                    <figcaption>Artiesten grid</figcaption>
                 </figure>
             </div>
             <a
-                href="#"
+                href="./project-trustmaking.html"
                 class="next-project__section interactable"
                 data-type="link"
             >
-                <h3>Project Title</h3>
-                <h4>Category</h4>
-                <p>next project</p>
+                <h3>Trustmaking</h3>
+                <h4>Webontwikkeling</h4>
+                <p>Volgend project</p>
                 <div class="next-project__image-wrapper">
                     <img
-                        src="https://images.pexels.com/photos/36478/amazing-beautiful-beauty-blue.jpg?auto=compress&cs=tinysrgb&w=400"
+                        src="./assets/img/projects/trustmaking.png"
                         alt=""
                     />
                 </div>
@@ -218,10 +212,18 @@
                         </ul>
                     </li>
                 </ul>
-                <p class="p__body amsterdam-time"></p>
-                <p>&copy; HONGZHOU 2023</p>
+                <div>
+                    <p class="p__body amsterdam-time"></p>
+                    <p>&copy; HONGZHOU <span class="current-year"></span></p>
+                </div>
+
             </div>
         </footer>
         <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>
+        <script>
+            (function () {
+                const locomotiveScroll = new LocomotiveScroll();
+            })();
+        </script>
     </body>
 </html>

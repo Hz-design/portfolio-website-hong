@@ -13,37 +13,35 @@
         </div>
         <header>
             <nav>
-                <ul class="navigation__container">
-                    <li>
+                <div class="navigation__container">
                         <a class="navigation-logo" href="./index.html"
-                            ><div>Hong Zhou</div></a
-                        >
-                    </li>
-                    <ul class="navigation-items">
-                        <li>
-                            <a href="./about.html"
-                                ><span data-hover="about">about</span></a
-                            >
-                        </li>
-                        <li>
-                            <a href="./projects.html"
-                                ><span data-hover="projects">projects</span></a
-                            >
-                        </li>
-                        <li>
-                            <a href="./contact.html"
-                                ><span data-hover="contact">contact</span></a
-                            >
-                        </li>
-                        <li>
-                            <a href="#"
-                                ><span data-hover="playground"
-                                    >playground</span
-                                ></a
-                            >
-                        </li>
-                    </ul>
-                </ul>
+                            ><div>Hong Zhou</div></a>
+                        <div class="hamburger-menu">
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                        </div>
+                    <div class="toonMenu">
+                        <ul class="navigation-items">
+                            <li>
+                                <a href="./about.html"
+                                    ><span data-hover="over mij">over mij</span></a
+                                >
+                            </li>
+                            <li>
+                                <a href="./projects.html"
+                                    ><span data-hover="projecten">projecten</span></a
+                                >
+                            </li>
+                            <li>
+                                <a href="./contact.html"
+                                    ><span data-hover="contact">contact</span></a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    
+                </div>
             </nav>
         </header>
         <main>
@@ -56,29 +54,36 @@
                 >
                     <ul>
                         <li class="landing__section-information-displayer">
-                            <p>Year</p>
+                            <p>Jaar</p>
                             <p>2023</p>
                         </li>
                         <li class="landing__section-information-displayer">
-                            <p>Categories</p>
+                            <p>Categorie</p>
                             <p>Designing for Future Technologies</p>
                         </li>
                         <li class="landing__section-information-displayer">
-                            <p>Coding</p>
+                            <p>UX Onderzoek, Ideatie, prototyperen en 3D ontwerpen</p>
                             <p>Hong Zhou</p>
                         </li>
                         <li class="landing__section-information-displayer">
-                            <p>Creative Direction & Design</p>
-                            <a href="https://www.glitterstudio.nl/"
-                                ><p>Glitterstudio</p></a
+                            <p>Schoolopdracht</p>
+                        </li>
+                        <li class="landing__section-information-displayer">                
+                            <a
+                                href="./assets/documents/Design_Rationale_Cooking_with_Mixed_Reality.pdf"
+                                target="_blank"
                             >
-                        </li>
-                        <li class="landing__section-information-displayer">
-                            <p>Website</p>
-                            <a href="https://oranjebitter-rotterdam.nl">
-                                <p>oranjebitter-rotterdam.nl</p>
+                                    <p>Design Rationale</p>
                             </a>
-                        </li>
+                    </li>
+                        <li class="landing__section-information-displayer">                
+                            <a
+                                href="./assets/documents/Project_ermerging_tech_product_biografie_v3.pdf"
+                                target="_blank"
+                            >
+                                    <p>Product biografie</p>
+                            </a>
+                    </li>
                     </ul>
                 </div>
                 <div class="landing__section-scroll-down scroll-down__project">
@@ -91,55 +96,69 @@
             </section>
 
             <div class="project-details__container first-section">
-                <figure class="interactable" data-type="link">
+                <figure>
                     <img
-                        src="https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg?auto=compress&cs=tinysrgb&w=400"
+                        src="./assets/img/dft-emergintech-1.png"
                         alt=""
                     />
-                    <figcaption>A caption</figcaption>
+                    <figcaption>Schermopname vanuit Unity, waarin het prototype de gebruiker ondersteunt bij het maken van keuzes en het koken zelf.</figcaption>
                 </figure>
                 <section class="project-details__bite">
-                    <h2 class="project-details__bite-title">Challenge</h2>
+                    <h2 class="project-details__bite-title">Uitdaging</h2>
                     <p class="project-details__bite-paragraph">
-                        Coding a webdesign delivered by Glitterstudio into a
-                        responsive custom wordpress website.
+                        Experimenteren met opkomende technologieën om een prototype te ontwikkelen dat zinvolle en toekomstgerichte toepassingen biedt voor de gebruikersgroep.
                     </p>
                 </section>
                 <section class="project-details__bite">
-                    <h2 class="project-details__bite-title">Approach</h2>
+                    <h2 class="project-details__bite-title">Aanpak</h2>
+                    <div class="project-details__bite-paragraph-container">
+                        <p class="project-details__bite-paragraph">
+                            Een mixed reality prototype, ontwikkeld in virtual reality, met de focus op het leren koken voor gebruikers, terwijl het afval wordt verminderd en voedsel wordt gerecycled om een grote diversiteit aan gerechten te creëren. Het doel is om zero waste en zero hunger te bereiken, zodat iedereen kan koken!
+                        </p>
+                        <p class="project-details__bite-paragraph">
+                            Dit mixed reality-concept leert consumenten hoe ze efficiënt kunnen koken en het meeste uit hun voedselresten kunnen halen. Het is gebaseerd op de principes van het verminderen, hergebruiken en recyclen van voedselafval om onnodige verspilling te voorkomen. De doelgroep voor dit project zijn studenten, met als doel een duurzamere generatie te creëren.
+                        </p>
+                    </div>
+                </section>
+                <section class="project-details__bite">
+                    <h2 class="project-details__bite-title">Resultaat</h2>
                     <p class="project-details__bite-paragraph">
-                        Oranjebitter changes their website every year for the
-                        pre-sale of their festival tickets. Having a custom
-                        wordpress website so they can easily update information
-                        if needed.
+                        Een virtual reality prototype in Unity met basisvisualisaties van het concept.
                     </p>
                 </section>
                 <figure class="project-details__figure-smaller">
                     <img
-                        src="https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg?auto=compress&cs=tinysrgb&w=400"
+                        src="./assets/img/projects/dft-selectable-states.png"
                         alt=""
                     />
-                    <figcaption>A caption</figcaption>
+                    <figcaption>In een gemengde werkelijkheid krijg je opties te zien van wat je met een ui kunt maken.</figcaption>
                 </figure>
                 <figure class="project-details__figure-smaller">
                     <img
-                        src="https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg?auto=compress&cs=tinysrgb&w=400"
+                        src="./assets/img/projects/dft-indicator-help.png"
                         alt=""
                     />
-                    <figcaption>A caption</figcaption>
+                    <figcaption>Tijdens het bereiden van een recept biedt het systeem hulp met indicatoren die aangeven hoe je ingrediënten moet snijden.</figcaption>
+                </figure>
+                <figure class="project-details__figure-smaller">
+                    <img
+                        src="./assets/img/projects/dft-share-pictures.png"
+                        alt=""
+                    />
+                    <figcaption>Deel je resultaten!</figcaption>
                 </figure>
             </div>
             <a
-                href="#"
+                href="./project-book-of-light.html"
                 class="next-project__section interactable"
                 data-type="link"
             >
-                <h3>Project Title</h3>
-                <h4>Category</h4>
-                <p>next project</p>
+                <h3>Book of Light</h3>
+                <h4>Fotografie</h4>
+                <p>Voglend project</p>
                 <div class="next-project__image-wrapper">
                     <img
-                        src="https://images.pexels.com/photos/36478/amazing-beautiful-beauty-blue.jpg?auto=compress&cs=tinysrgb&w=400"
+                        src="./assets/img/book-of-light-3.png"
                         alt=""
                     />
                 </div>
@@ -175,10 +194,18 @@
                         </ul>
                     </li>
                 </ul>
-                <p class="p__body amsterdam-time"></p>
-                <p>&copy; HONGZHOU 2023</p>
+                <div>
+                    <p class="p__body amsterdam-time"></p>
+                    <p>&copy; HONGZHOU <span class="current-year"></span></p>
+                </div>
+
             </div>
         </footer>
         <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>
+        <script>
+            (function () {
+                const locomotiveScroll = new LocomotiveScroll();
+            })();
+        </script>
     </body>
 </html>
