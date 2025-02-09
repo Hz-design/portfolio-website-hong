@@ -1295,14 +1295,14 @@ footer div ul li {
 
     .landing__section{
         position: relative;
-        height: 100vh;
+        min-height: 100vh;
         width: 100%;
 
         justify-content: space-evenly;
     }
 
     h1.landing__h1 {
-        padding: 4rem 2rem 2rem;
+        padding: 2rem;
         font-size: var(--h2-fs);
     }
     .landing__section-text-container {
@@ -1310,12 +1310,7 @@ footer div ul li {
         height: fit-content;
     }
 
-    .landing__section-scroll-down{
-        position: absolute;
-        bottom: 0;
-        left: 0;
-    }
-    
+
     .amsterdam-time {
         display: none;
     }
@@ -1456,7 +1451,6 @@ footer div ul li {
 
     
 
-
     /****************/
     /*** Over mij ***/
     /****************/
@@ -1509,6 +1503,11 @@ footer div ul li {
     .landing-project-container{
         padding: 0;
     }
+
+    .landing__section-information-displayer p:nth-of-type(2){
+        text-align: end;
+    }
+
     .landing__h1--project{
         font-size: 3rem !important;
     }
