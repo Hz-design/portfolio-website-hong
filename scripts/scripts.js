@@ -1,12 +1,14 @@
 // Navigation menu
 const menu = document.querySelector('.hamburger-menu');
 const deNav = document.querySelector('.toonMenu');
+const elMain = document.querySelector('main');
 
 menu.addEventListener('click', toggleMenu);
 
 function toggleMenu(event){
     deNav.classList.toggle('show');
     menu.classList.toggle('open');
+    elMain.classList.toggle('blur');
     // toggleOff.classList.toggle('transparant');
 }
 

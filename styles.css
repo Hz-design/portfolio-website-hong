@@ -1270,6 +1270,11 @@ footer div ul li {
 /************************************************/
 
 @media (max-width: 27rem) {
+    .blur{
+        filter: blur(.5rem);
+        transition: .3s ease-in-out;
+    }
+
     h1.landing__h1 {
         padding: 4rem 2rem 2rem;
     }
@@ -1290,8 +1295,19 @@ footer div ul li {
     /*****************/
     /*** Navigatie ***/
     /*****************/
+    nav{
+        position: fixed;
+        z-index: 99999;
+    }
+
     .navigation__container{
         left: 0;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .navigation-logo{
+        z-index: 99999;
     }
 
     .navigation-items{
@@ -1302,25 +1318,28 @@ footer div ul li {
         width: 100%;
         height: 100%;
         justify-content: center !important;
-        background-color: var(--primary-grey);
         z-index: 100;
+
+        background-color: rgba(255, 255, 255, 0.5);
+
     }
 
     .hamburger-menu {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        height: 18px;
-        width: 18px;
+        align-self: center;
+        height: 24px;
+        width: 24px;
         cursor: pointer;
-        z-index: 99999;
+        z-index: 1000;
     }
       
     .line {
         height: 2px;
-        width: 18px;
-        background-color: var(--primary-white);
-        margin: 2px 0;
+        width: 24px;
+        background-color: var(--primary-black);
+        margin: 3px 0;
         transition: transform 0.2s ease-in-out;
     }
       
@@ -1352,52 +1371,28 @@ footer div ul li {
     }
       
     .toonMenu{
-        background-color: var(--primary-grey);
+
         position: fixed;
         height: 100vh;
         top: 0;
         left: 0;
         z-index: 20;
         transform: translateX(100%);
-        transition: .3s ease;
-        max-height: 100%;
+        transition: none;
         width: 100%;
         
         padding: 1.125rem;
 
     }
     
-    /* .toonMenu li{
-        font-family: var(--ff-accent);
-        color: var(--clr-secondary);
-    } */
-    
-    /* .toonMenu a{
-        font-family: var(--ff-accent);
-        text-decoration: none;
-    }
-    
-    .toonMenu a:hover, .toonMenu a:focus{
-        color: var(--clr-accent);
-        text-decoration: dashed;
-    } */
-    
     .toonMenu.show{
         transform: translateX(0%);
+        transition: none;
+    }    
+
+    ul.navigation-items{
+        gap: 4rem;
     }
-    
-    .toonMenu ul{
-        padding: 3em 3em 1.5em 3em;
-    }
-    
-    .toonMenu ul li{
-        list-style-type: none;
-        letter-spacing: .1em;
-        line-height: 2em;
-        /* font-size: var(--fs-600); */
-        font-weight: bold;
-    }
-    
 
     /****************/
     /*** Over mij ***/
@@ -1408,6 +1403,8 @@ footer div ul li {
     .hero-mobile__about-me{
         position: relative;
         transform: translateX(0%);
+        flex-direction: column;
+        z-index: 1;
     }
 
     .hero-mobile__about-me-foto{ 
