@@ -5,7 +5,7 @@
     /* White space */
 
     /* Colors */
-    --primary-black: #111111;
+    --primary-black: #443f43;
     --primary-grey: #3d3d3d;
     --primary-light-grey: #7e7e7e;
     --primary-white: #ffffff;
@@ -120,10 +120,15 @@ li #trailer-icon {
 /** navigation slotmachine effect **/
 
 nav {
+    position: fixed;
     width: 100%;
     padding: 1rem;
     height: initial;
-    z-index: 10;
+    z-index: 99999;
+}
+
+.hamburger-menu{
+    display: none;
 }
 
 .navigation__container {
@@ -148,7 +153,6 @@ ul.navigation__container li {
 .navigation-logo {
     text-decoration: none;
     font-size: 2rem;
-    text-transform: lowercase;
     color: var(--primary-black);
 }
 
@@ -1270,19 +1274,38 @@ footer div ul li {
 /************************************************/
 
 @media (max-width: 27rem) {
+    main{
+        overflow: hidden;
+    }
+
     .blur{
         filter: blur(.5rem);
         transition: .3s ease-in-out;
-        overflow: hidden;
+    }
+
+    .landing__section{
+        position: relative;
+        height: 100vh;
+        width: 100%;
+
+        justify-content: space-evenly;
     }
 
     h1.landing__h1 {
         padding: 4rem 2rem 2rem;
+        font-size: var(--h2-fs);
     }
     .landing__section-text-container {
         flex-direction: column;
         height: fit-content;
     }
+
+    .landing__section-scroll-down{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    
     .amsterdam-time {
         display: none;
     }
@@ -1401,6 +1424,8 @@ footer div ul li {
     .featured-product__container {
         grid-template-columns: repeat(1, 3fr);
         gap:2rem;
+        padding: 0;
+        margin: 0 auto;
     }
     .feature-product__card{
         transform: none !important;
@@ -1408,6 +1433,10 @@ footer div ul li {
 
     .feature-product__card-title{
         opacity: 1 !important;
+    }
+
+    .featured-product__title-container{
+        flex-direction: column;
     }
 
 
@@ -1438,11 +1467,49 @@ footer div ul li {
     .connect__contact-container section{
         margin:0 1.5rem;
     }
+    /*****************/
+    /*** Projecten ***/
+    /*****************/
+    .project-ls__container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .project{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    /***************/
+    /*** project ***/
+    /***************/
+    .landing-project-container{
+        padding: 0;
+    }
+    .landing__h1--project{
+        font-size: 3rem !important;
+    }
+
+    .scroll-down__project{
+        margin: 0;
+    }
+    
+    .project-details__bite{
+        flex-direction: column;
+        gap:1rem;
+    }
+    
+    .project-details__figure-smaller{
+        width: 100% !important;
+    }
 
     /**************/
     /*** Footer ***/
     /**************/
     footer div{
         flex-direction: column;
+        gap: 1rem;
+    }
+
+    footer div p{
+        align-self: baseline;
     }
 }
