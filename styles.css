@@ -5,7 +5,7 @@
     /* White space */
 
     /* Colors */
-    --primary-black: #443f43;
+    --primary-black: #222222;
     --primary-grey: #3d3d3d;
     --primary-light-grey: #7e7e7e;
     --primary-white: #ffffff;
@@ -274,10 +274,10 @@ h1.landing__h1 {
     min-height: 30vh;
 }
 .landing__section-text-container {
-    height: 50vh;
+    height: 54vh;
     display: flex;
     gap: 10vw;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
     padding: 0 2rem;
 }
