@@ -1485,8 +1485,10 @@ footer div ul li {
         grid-template-columns: repeat(1, 1fr);
     }
 
-    .project{
-        grid-template-columns: repeat(1, 1fr);
+    .project {
+        display: flex;
+        flex-direction: column-reverse;
+
     }
 
     .project-page{
