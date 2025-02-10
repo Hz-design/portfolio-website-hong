@@ -256,6 +256,7 @@ p.p__body {
     font-family: var(--fm-sans-serif);
     font-size: 1.2rem;
     line-height: 150%;
+    max-width: 65ch;
 }
 
 h1.landing__h1 {
@@ -1029,6 +1030,7 @@ span.slot-machine__button-2 a span::before {
     max-width: 65ch;
     font-family: var(--fm-sans-serif);
     font-size: var(--p-fs);
+    padding: .5rem 0;
 }
 
 /* Scroll box about me */
