@@ -983,39 +983,10 @@ span.slot-machine__button-2 a span::before {
 
 }
 
-.hero-mobile__about-me {
-    padding-top: 2rem;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    height: fit-content;
-    width: 100%;
-}
-
 .hero-mobile__about-me{
-    position: absolute;
-    transform: translateX(100%);
+    display: none;
 }
 
-.hero-mobile__about-me figure{   
-}
-
-.hero-mobile__about-me img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    object-position: 20% 10%;
-    border-radius: 2rem;
-}
-
-.hero-mobile__about-me h1 {
-    position: absolute;
-    bottom: 0%;
-    left: 0;
-    margin: 0 auto;
-    font-size: 5rem;
-    color: var(--primary-black);
-}
 
 
 /* About me page Information */
@@ -1531,10 +1502,34 @@ footer div ul li {
         transform: translateX(0%);
         flex-direction: column;
         z-index: 1;
+        padding-top: 2rem;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        height: fit-content;
+        width: 100%;
     }
 
     .hero-mobile__about-me-foto{ 
         position: relative;
+    }
+
+
+    .hero-mobile__about-me img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        object-position: 20% 10%;
+        border-radius: 2rem;
+    }
+    
+    .hero-mobile__about-me h1 {
+        position: absolute;
+        bottom: 0%;
+        left: 0;
+        margin: 0 auto;
+        font-size: 5rem;
+        color: var(--primary-black);
     }
 
     .about-me__section article{
