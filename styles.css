@@ -20,7 +20,7 @@
     --h2-fs: 2rem;
     --h3-fs: 1.5rem;
 
-    --p-fs:1rem;
+    --p-fs:1.125rem;
 }
 
 *,
@@ -1033,6 +1033,7 @@ span.slot-machine__button-2 a span::before {
     max-width: 65ch;
     font-family: var(--fm-sans-serif);
     font-size: var(--p-fs);
+    line-height: 1.875rem;
     padding: .5rem 0;
 }
 
