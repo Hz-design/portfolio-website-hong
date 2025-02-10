@@ -294,6 +294,7 @@ h1.landing__h1 {
     padding: 0 2rem;
 }
 
+
 .landing__section-information-displayer {
     display: flex;
     flex-direction: row;
@@ -888,6 +889,8 @@ span.slot-machine__button-2 a span::before {
 }
 
 .project-details__bite-paragraph {
+    font-size: 1.125rem;
+    line-height: 1.875rem;
     max-width: 75ch;
     text-align: left;
 }
